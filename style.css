@@ -220,10 +220,10 @@ footer .last .terms, footer .last .Privacy {
 .gauche {
   padding: 10px;
   background-color: rgb(252, 238, 213);
-  color: rgb(255, 255, 255);
+  background-color: rgb(252, 238, 213);
+  color: rgb(0, 51, 98);
   width: 150px;
   border: solid 1px rgb(0, 51, 98);
-  color: rgb(0, 51, 98);
   border-radius: 30px;
 }
 
@@ -248,7 +248,8 @@ footer .last .terms, footer .last .Privacy {
 }
 .third .btn {
   background-color: rgb(255, 255, 255);
-  color: rgb(0, 51, 98);
+  background-color: rgb(0, 51, 98);
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   border-radius: 30px;
   border: solid 2px rgb(0, 51, 98);
@@ -298,6 +299,7 @@ footer .last .terms, footer .last .Privacy {
 }
 
 .container20 {
+  background-color: rgb(252, 238, 213);
   background-color: rgb(252, 238, 213);
   border-radius: 30px;
   margin-top: 100px;

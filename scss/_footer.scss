@@ -9,7 +9,6 @@
   border-top: $width $style $color;
 }
 
-
 @mixin box-style($background: $blue, $border-radius: $border, $padding: 20px) {
   background-color: $background;
   border-radius: $border-radius;
