@@ -1,60 +1,73 @@
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin border-radius($radius: $border) {
+  border-radius: $radius;
+}
+
+@mixin button-style($background: $bg, $color: $blue, $width: 250px, $height: 35px) {
+  background-color: $background;
+  color: $color;
+  width: $width;
+  height: $height;
+  border-radius: $border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 header {
+  background-color: $bg;
+}
+
+.nav {
+  list-style: none;
+  background-color: $bg;
+  @include flex-center(row, flex-start, center);
+  margin-left: 300px;
+  color: $blue;
+
+  .logo1 {
+    margin-right: 70px;
+  }
+
+  li {
+    text-decoration: none;
+    margin-left: 20px;
     background-color: $bg;
   }
-  
-  .nav {
-    list-style: none;
+
+  .button2 {
+    @include flex-center(row, flex-start, center);
+    height: 75px;
+    margin-left: 20px;
     background-color: $bg;
-    display: flex;
-    margin-left: 300px;
-    align-items: center;
-    color: $blue;
-  
-    .logo1 {
-      margin-right: 70px;
-    }
-  
-    li {
-      text-decoration: none;
+
+    .right {
+      @include button-style($bg, $blue);
       margin-left: 20px;
-      background-color: $bg;
-    }
-  
-    .button2 {
-      display: flex;
-      align-items: center;
-      height: 75px;
-      margin-left: 20px;
-      background-color: $bg;
-  
-      .right {
-        border: none;
-        margin-left: 20px;
-        width: 250px;
-        height: 35px;
-        border-radius: $border;
-        display: flex;
-        align-items: center;
-        background-color: $bg;
-        justify-content: center;
-        padding: 0 20px;
-        cursor: pointer;
-        font-size: 16px;
-  
-        &.search-button {
-          background-color: $white;
-          color: $black;
-        }
-  
-        &.login-button {
-          background-color: $blue;
-          color: $white;
-          width: 200px;
-        }
-  
-        i.fa-search {
-          margin-right: 8px;
-        }
+
+      &.search-button {
+        background-color: $white;
+        color: $black;
+      }
+
+      &.login-button {
+        background-color: $blue;
+        color: $white;
+        width: 200px;
+      }
+
+      i.fa-search {
+        margin-right: 8px;
       }
     }
   }
+}

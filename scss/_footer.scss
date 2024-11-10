@@ -1,124 +1,135 @@
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin border-top($color: $black, $width: 1px, $style: solid) {
+  border-top: $width $style $color;
+}
+
+
+@mixin box-style($background: $blue, $border-radius: $border, $padding: 20px) {
+  background-color: $background;
+  border-radius: $border-radius;
+  padding: $padding;
+}
+
 footer {
+  @include flex-center(column, center, center);
+  padding: 30px;
+  background-color: $bg;
+
+  .container30 {
+    @include box-style($blue, $border, 20px);
+    min-height: 150px;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    background-color: $bg;
-  
-    .container30 {
+
+    .input {
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
       background-color: $blue;
-      min-height: 150px; 
-      width: 100%; 
-      max-width: 1200px;
-      border-radius: $border;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-  
-      .input {
-        @include center-horizontal-vertical;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-        background-color: $blue;
-        justify-content: center;
-  
-        .register {
-          font-size: 20px;
-          background-color: $blue;
-          font-weight: bold;
-          color: $white;
-          background-color: $blue;
-          margin-right: 20px;
-          flex-grow: 1;
-        }
-  
-        .buttons20 {
-          display: flex;
-          background-color: $white;
+      justify-content: center;
+
+      .register {
+        font-size: 20px;
+        font-weight: bold;
+        color: $white;
+        margin-right: 20px;
+        flex-grow: 1;
+      }
+
+      .buttons20 {
+        @include flex-center(row, center, center);
+        background-color: $white;
+        border-radius: 5px;
+        gap: 10px;
+
+        .email-input {
+          padding: 12px;
+          font-size: 16px;
+          border: 1px solid #ccc;
           border-radius: 5px;
-          gap: 10px;
-          align-items: center;
-  
-          .email-input {
-            padding: 12px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            
-          }
-  
-          .buttonoff {
-            background-color: $blue;
-            color: $white;
-            border: none;
-            border-radius: $border;
-            padding: 12px 20px;
-            cursor: pointer;
-            font-size: 16px;
-  
-            &:hover {
-              background-color: darken($blue, 10%);
-            }
-          }
+          width: 200px;
+        }
+
+        .buttonoff {
+          background-color: $blue;
+          color: $white;
+          border: none;
+          border-radius: $border;
+          padding: 12px 20px;
+          cursor: pointer;
+          font-size: 16px;
         }
       }
     }
-    .navbas {
-        @include center-horizontal-vertical; 
-      width: 100%;
-      max-width: 1200px;
-      padding-top: 20px;
-      margin-top: 20px;
-      border-bottom: solid 1px $black;
-  
-      .ulgauche, .uldroite {
-        display: flex;
-        gap: 15px;
-  
-        li {
-          list-style: none;
-          color: $black;
-  
-        }
-      }
-    }
-    .last {
-      @include space-between-horizontal; 
-      width: 100%;
-      max-width: 1200px;
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 20px;
-  
-      color: $black;
-      margin-top: 20px; 
-      .last2 {
-        text-align: start;
-        margin-right: 250px;
-      }
-      .terms{
-       text-align: center;
-      }
-      .Privacy{
-        text-align: end
-      }
-      .terms{
-        margin-left: 250px;
-        text-align: end
-      }
-      @include center-horizontal-vertical; 
-      gap: 20px; 
-      .logo {
-        width: 24px; 
-        height: 24px;
-      }
-      .terms, .Privacy {
-        cursor: pointer;
-        text-decoration: none;
+  }
+
+  .navbas {
+    @include flex-center(row, space-between, center);
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 20px;
+    margin-top: 20px;
+    @include border-top($black);
+    border-top: solid 1px $black;
+
+    .ulgauche, .uldroite {
+      @include flex-center(row, center, center);
+      gap: 15px;
+
+      li {
+        list-style: none;
         color: $black;
       }
     }
   }
+
+  .uldroite li img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .last {
+    @include flex-center(row, space-between, center);
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 20px;
+    color: $black;
+    gap: 20px;
+
+    .last2 {
+      text-align: start;
+      margin-right: 250px;
+    }
+
+    .terms {
+      text-align: center;
+      margin-left: 250px;
+    }
+
+    .Privacy {
+      text-align: end;
+    }
+
+    .logo {
+      width: 24px;
+      height: 24px;
+    }
+
+    .terms, .Privacy {
+      cursor: pointer;
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}
