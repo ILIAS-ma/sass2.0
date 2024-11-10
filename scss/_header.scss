@@ -1,0 +1,60 @@
+header {
+    background-color: $bg;
+  }
+  
+  .nav {
+    list-style: none;
+    background-color: $bg;
+    display: flex;
+    margin-left: 300px;
+    align-items: center;
+    color: $blue;
+  
+    .logo1 {
+      margin-right: 70px;
+    }
+  
+    li {
+      text-decoration: none;
+      margin-left: 20px;
+      background-color: $bg;
+    }
+  
+    .button2 {
+      display: flex;
+      align-items: center;
+      height: 75px;
+      margin-left: 20px;
+      background-color: $bg;
+  
+      .right {
+        border: none;
+        margin-left: 20px;
+        width: 250px;
+        height: 35px;
+        border-radius: $border;
+        display: flex;
+        align-items: center;
+        background-color: $bg;
+        justify-content: center;
+        padding: 0 20px;
+        cursor: pointer;
+        font-size: 16px;
+  
+        &.search-button {
+          background-color: $white;
+          color: $black;
+        }
+  
+        &.login-button {
+          background-color: $blue;
+          color: $white;
+          width: 200px;
+        }
+  
+        i.fa-search {
+          margin-right: 8px;
+        }
+      }
+    }
+  }

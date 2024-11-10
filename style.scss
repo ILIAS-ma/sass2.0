@@ -3,7 +3,7 @@ $black: rgb(46, 46, 46);
 $border: 30px;
 $bg: rgb(252, 238, 213);
 $white: rgb(255, 255, 255);
-$shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);;
+$shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 * {
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
   font-family: 'Roboto', sans-serif;
@@ -267,7 +267,7 @@ header {
   }
   .bleu{
     border-radius: $border;
-    background-color: rgb(0, 132, 255);
+    background-color: rgb(0, 59, 114);
     padding: 7px;
     width: 110px;
   color: $white;
@@ -276,5 +276,170 @@ header {
    
       margin-left: 20px;
       margin-right: 20px;
+  }
+}
+.input {
+  background-color: $bg;
+
+  .register {
+    background-color: $blue;
+    color: $white;
+    padding: 10px; 
+  }
+  .buttons20 {
+    padding: 7px;
+    .buttonoff {
+      background-color: $blue;
+      color: $white;
+      border-radius: $border;
+      padding: 10px 20px; 
+    }
+  }
+}
+@mixin center-horizontal-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin space-between-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin center-horizontal-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: $bg;
+
+  .container30 {
+    background-color: $blue;
+    min-height: 150px; 
+    width: 100%; 
+    max-width: 1200px;
+    border-radius: $border;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+    .input {
+      @include center-horizontal-vertical;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      background-color: $blue;
+      justify-content: center;
+
+      .register {
+        font-size: 20px;
+        background-color: $blue;
+        font-weight: bold;
+        color: $white;
+        background-color: $blue;
+        margin-right: 20px;
+        flex-grow: 1;
+      }
+
+      .buttons20 {
+        display: flex;
+        background-color: $white;
+        border-radius: 5px;
+        gap: 10px;
+        align-items: center;
+
+        .email-input {
+          padding: 12px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          width: 200px;
+          
+        }
+
+        .buttonoff {
+          background-color: $blue;
+          color: $white;
+          border: none;
+          border-radius: $border;
+          padding: 12px 20px;
+          cursor: pointer;
+          font-size: 16px;
+
+          &:hover {
+            background-color: darken($blue, 10%);
+          }
+        }
+      }
+    }
+  }
+  .navbas {
+    @include space-between-horizontal; 
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-bottom: solid 1px $black;
+
+    .ulgauche, .uldroite {
+      display: flex;
+      gap: 15px;
+
+      li {
+        list-style: none;
+        color: $black;
+
+      }
+    }
+  }
+  .last {
+    @include space-between-horizontal; 
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 20px;
+
+    color: $black;
+    margin-top: 20px; 
+    .last2 {
+      text-align: start;
+      margin-right: 250px;
+    }
+    .terms{
+     text-align: center;
+    }
+    .Privacy{
+      text-align: end
+    }
+    .terms{
+      margin-left: 250px;
+      text-align: end
+    }
+    @include center-horizontal-vertical; 
+    gap: 20px; 
+    .logo {
+      width: 24px; 
+      height: 24px;
+    }
+    .terms, .Privacy {
+      cursor: pointer;
+      text-decoration: none;
+      color: $black;
+    }
   }
 }
